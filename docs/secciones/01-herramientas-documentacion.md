@@ -4,11 +4,15 @@
 
 **Autor:** Damiem
 
+**Secciones del PDF:** 6.2 y 6.3 (Páginas 186-197)
+
+
+
 ---
 
 
 
-# Índice
+# 📋 Índice
 
 
 
@@ -247,62 +251,86 @@ Luego este funcionará desde terminal o cualquier editor como VSCode.
 
 - Tener instalado **PHP** en tu sistema (si usas XAMPP, ya lo tienes).  
 - Tener instalado **Composer**.
+Composer es un gestor de dependencias de PHP. Permite instalar herramientas como PHPDocumentor fácilmente.
 
-###  Instalación en Linux/macOS
+###  Instalación
 
-1. Instalar Composer (si no lo tienes):
+Antes de nada, hay que preparar un proyecto
 
-```bash
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-```
-El primer comando descarga y ejecuta el instalador de Composer.
-
-Y el segundo mueve el archivo resultante a un lugar global para que puedas usarlo como un comando normal (`composer`) desde cualquier terminal.
-
-2. Instalar phpDocumentor globalmente:
-```bash
-composer global require phpdocumentor/phpdocumentor
-```
-Lo hace disponible para que puedas ejecutarlo desde cualquier terminal usando:
-```bash
-phpdoc
-```
-3.  Agregar Composer global al PATH de forma persistente:
-```bash
-echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> ~/.bashrc
-```
-Esto para que pueda ser usado desde cualquier lugar de la terminal en cualquier terminal.
-
-4.  Verificar la instalación:
-```bash
-phpdoc --version
-```
-
-### Instalación en Windows
-
-1. **Instalar Composer** (si no lo tienes):
-
-- Descarga el instalador desde [https://getcomposer.org/download/](https://getcomposer.org/download/).  
-- Ejecuta el instalador y sigue los pasos. Asegúrate de marcar la opción de **añadir Composer al PATH** para poder usarlo desde cualquier terminal.
-
-2. **Instalar phpDocumentor globalmente**:
-Abre **PowerShell** o **CMD** y ejecuta:
+1.  Crea una carpeta para tu proyecto:
 
 ```bash
-composer global require phpdocumentor/phpdocumentor
+mkdir -p ~/Escritorio/PHP/Proyecto
+cd ~/Escritorio/PHP/Proyecto
 ```
-3. **Agregar Composer global al PATH (si es necesario)** 
-```bash
-`%USERPROFILE%\AppData\Roaming\Composer\vendor\bin`
+2. Crea tu archivo PHP (`ejemplo.php`):
 ```
-4. **Verificar la instalación:**
-```bash
-phpdoc --version
+<?php
+/**
+ * Clase de ejemplo
+ * 
+ * @author Damiem Rave
+ * @version 1.0
+ *
+ * Suma dos números.
+ *
+ * @param int $a Primer número.
+ * @param int $b Segundo número.
+ * @return int Resultado de la suma
+ */
+function sumar($a, $b) {
+    return $a + $b;
+}
+?>
 ```
-**Nota**:
-Si estás usando **XAMPP**, Composer y phpDocumentor funcionarán igual, pero asegúrate de que la terminal reconozca el PHP que viene con XAMPP (normalmente `C:\xampp\php`) agregando esa ruta al PATH si es necesario.
+3. Crear un proyecto válido con Composer
+ - Inicializa Composer en la carpeta del proyecto:
+  ```bash
+  composer init
+  ```
+ -  Responde a las preguntas. Lo más importante es el **nombre del paquete**, que debe seguir el formato `usuario/paquete`:
+ ```
+ Package name: madrid/phpdocumentor-ejemplo
+Description: Proyecto de prueba para PHPDocumentor
+Author: tu_nombre
+Minimum Stability: stable
+Package Type: library
+ ```
+ Puedes dejar el resto de opciones por defecto.
+ 
+ 4. Instalar PHPDocumentor
+
+Instala PHPDocumentor localmente en tu proyecto:
+ ```bash
+ composer require --dev phpdocumentor/proyecto
+  ```
+  Esto creará la carpeta `vendor/` y permitirá ejecutar PHPDocumentor desde `vendor/bin/phpdoc`.
   
+  5. Generar la documentación
+
+Ejecuta el siguiente comando en la carpeta del proyecto:
+ ```bash
+vendor/bin/phpdoc -d . -t docs
+  ```
+  -   `-d .` → lee todos los archivos PHP de la carpeta actual
+
+-   `-t docs` → genera la documentación en la carpeta `docs`
+
+6. Ver la documentación
+
+- Abre la carpeta `docs` creada dentro del proyecto:
+ ```bash
+~/Escritorio/PHP/Proyecto/docs/
+  ```
+  - Abre el archivo `index.html` en tu navegador.
+  - Verás una página web con la documentación de tu archivo `ejemplo.php`.
+  
+  ### Ejemplo de documento PHP comentado
+  ![Ejemplo PHP comentado](../imagenes/damiem/ejemplo-php-comentado.png)
+  
+  ### EJemplo de documentación generada con PHPDocumentor
+  ![Ejemplo PHPDocumentor](../imagenes/damiem/ejemplo-phpdocumentor.png)
+    
 ### Los elementos que pueden ser documentados son los siguientes:
 
 - **Variables globales**  
@@ -393,24 +421,183 @@ Al igual que en Javadoc, en phpDocumentor existen **etiquetas para documentar bl
 
 
 ## 6.2.3. Doxygen {#doxygen}
+**Doxygen** es una herramienta de documentación automática que:
+-   Analiza el **código fuente** de varios lenguajes (C, C++, Java, Python, PHP, Fortran, etc.).
+-   Genera documentación en **HTML, PDF, RTF, LaTeX**, y otros formatos.
+-   Usa comentarios especiales en el código (similar a PHPDoc o JavaDoc) para crear documentación legible y profesional.
 
+En otras palabras, es como PHPDocumentor, pero **mucho más versátil y multilenguaje**.
 
+Los principales son:
 
-[Tu contenido sobre Doxygen...]
+| Lenguaje | Comentarios compatibles |
+| --- | --- |
+| C / C++ | `/** ... */` y `/// ...` |
+| Java | `/** ... */` (JavaDoc) |
+| Python | `""" ... """` y `# ...` |
+| PHP | `/** ... */` (PHPDoc) |
 
+Doxygen es especialmente popular en **C y C++** en entornos industriales, embebidos o científicos.
 
+## Características principales
+
+-   Genera **diagramas de clases y dependencias** (si instalas Graphviz).
+
+-   Permite **documentar funciones, clases, variables y macros**.
+
+-   Soporta etiquetas como:
+
+    -   `@param` → describe parámetros
+
+    -   `@return` → describe valores de retorno
+
+    -   `@author`
+
+    -   `@deprecated`
+
+    -   `@see`
+
+    -   `@example` → para incluir ejemplos de uso
+
+-   Puede generar documentación **para todo un proyecto**, incluyendo jerarquías de carpetas y módulos.
+
+### Instalación y uso
+1.  **Instalar Doxygen**
+ - En Linux:
+ ```bash
+sudo apt install doxygen graphviz
+  ```
+- Windows: descargar desde doxygen.nl  
+2. **Crear un archivo de configuración**
+```bash
+   doxygen -g
+```
+Esto genera `Doxyfile`, donde puedes configurar:
+
+-   Carpeta de código fuente (`INPUT`)
+
+-   Carpeta de salida (`OUTPUT_DIRECTORY`)
+
+-   Formato de salida (`GENERATE_HTML`, `GENERATE_LATEX`, etc.)
+3. **Ejecutar Doxygen**
+```bash
+doxygen Doxyfile
+```
+Generará la documentación en la carpeta que hayas definido (`html/`, `latex/`, etc.)
+
+4. **Abrir la documentación**
+
+Abre `html/index.html` en tu navegador para ver la documentación completa.
+
+  ### Ejemplo de documento Java comentado
+  ![Ejemplo PHP comentado](../imagenes/damiem/ejemplo-java-comentado.png)  
+  
+  ### Ejemplo de documentación generada con Doxygen
+  ![Ejemplo PHP comentado](../imagenes/damiem/ejemplo-doxygen.png)
 
 ---
 
 
 
+
+
+
 ## 6.3. Formatos estándar para la documentación {#formatos}
 
+### Objetivo
 
+-   Facilitar la **comprensión del código** por otros programadores o en el futuro.
 
-[Tu contenido sobre formatos...]
+-   Permitir **reutilizar el código** sin estudiar cada línea en detalle.
 
+-   Documentar **clases, métodos, variables y flujo general** de forma clara y concisa.
 
+### Nomenclatura
+
+-   Usar **nombres significativos** para clases, métodos y variables.
+
+-   Ejemplo: un entero que indica posición → `iposicion` o `iposition` según idioma.
+
+### Tipos de comentarios
+**Comentario en línea**: `//`
+```java
+// Atributos
+```
+**Comentario en bloque**: `/* ... */`
+```java
+// Atributos
+```
+**Comentario para documentación (JavaDoc/PHPDoc)**: `/** ... */`
+```java
+/**
+ * Clase Autor
+ * Contiene información sobre el autor
+ * @author Damiem
+ * @version 1.0
+ */
+```
+### Documentación de clases
+-   **Nombre** de la clase: identificativo y descriptivo.
+
+-   **Descripción**: breve resumen de la función de la clase.
+
+-   **Autor**: quien implementa la clase.
+
+-   **Versión**: control de cambios.
+
+```java
+/**
+ * Clase Autor
+ * Contiene información sobre el autor
+ * @author Javier
+ * @version 1.0
+ */
+public class Autor {
+    // Atributos
+    /** Nombre del autor */
+    private String nombre;
+    /** Ciudad del autor */
+    private String ciudad;
+    /** Lista de libros */
+    private List libros;
+}
+```
+### Constructores y métodos
+Documentar **tipo de método**, **nombre**, **parámetros** y **valor de retorno**.
+```java
+/**
+ * Constructor Autor
+ * @param nombre Nombre del autor
+ * @param ciudad Ciudad del autor
+ */
+public Autor(String nombre, String ciudad) {
+    this.nombre = nombre;
+    this.ciudad = ciudad;
+    this.libros = new ArrayList();
+}
+
+/**
+ * setNombre
+ * @param n Nombre del autor
+ */
+public void setNombre(String n){
+    this.nombre = n;
+}
+
+/**
+ * getNombre
+ * @return Nombre del autor
+ */
+public String getNombre(){
+    return this.nombre;
+}
+```
+### Beneficios
+-   Facilita la **lectura y mantenimiento del código**.
+
+-   Permite **generar documentación automáticamente** con herramientas como **Doxygen, PHPDocumentor o JavaDoc**.
+
+-   Mejora la **reutilización del código** en futuros proyectos.
 
 ---
 
@@ -420,8 +607,7 @@ Al igual que en Javadoc, en phpDocumentor existen **etiquetas para documentar bl
 
 
 
-[Tus conclusiones...]
-
+Con todo esto hemos visto que existen distintos métodos y herramientas para generar documentación de una forma más sencilla y hemos aprendido el valor de comentar el código para los proyectos.
 
 
 ---
@@ -432,7 +618,7 @@ Al igual que en Javadoc, en phpDocumentor existen **etiquetas para documentar bl
 
 
 
-1. Material de clase - TeoriaDoc.pdf (Páginas 186-197)
+1. Material de clase - TeoriaDoc.pdf (Páginas 3 - 14 del pdf o 186-197 del libro)
 
 2. [Javadoc Official Documentation](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html)
 

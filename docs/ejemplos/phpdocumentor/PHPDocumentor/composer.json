@@ -1,0 +1,14 @@
+{
+    "name": "madrid/phpdocumentor-ejemplo",
+    "description": "Proyecto de prueba para PHPDocumentor",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Damiem"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "^3.8"
+    }
+}
