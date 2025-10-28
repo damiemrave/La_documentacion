@@ -24,7 +24,7 @@ Aquí se explica que la cabecera y otros elementos han sido generados automátic
 
 Ahora crearemos una plantilla y será de esta forma:
 Como nuestra explicación se centra en **Java**, seleccionamos **Java Class**.
-![Creación de plantilla](../imagenes/brian/paso1-pantilla.png)
+![Creación de plantilla](../imagenes/brian/paso1-plantilla.png)
 
 
 Posteriormente, hacemos clic en **Open in Editor** y añadimos el siguiente código:
@@ -66,7 +66,7 @@ Ahora, en el menú principal, crearemos nuestro **primer canal**.
 
 Le asignamos un nombre y enviamos un **mensaje de prueba**.
 
-![Mensaje de prueba](../imagenes/brian/mensaje-prueba-canal-Slack.png)
+![Mensaje de prueba](../imagenes/brian/mensaje-prueba-canal-slack.png)
 
 Podemos ver las **distintas plantillas de flujo de trabajo** que ofrece Slack.
 
