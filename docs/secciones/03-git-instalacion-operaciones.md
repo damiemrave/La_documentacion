@@ -36,7 +36,7 @@
 
 ---
 
-# Conceptos Basicos
+# Conceptos Basicos {#conceptos}
 
 ## Repositorio {#repositorio}
 
@@ -209,4 +209,5 @@ Hemos visto cómo usar Git y GitHub desde la instalación hasta operaciones avan
 1. [Git Official Documentation](https://git-scm.com/doc)
 2. [GitHub Docs](https://docs.github.com/)
 3. Material de clase
+
 
