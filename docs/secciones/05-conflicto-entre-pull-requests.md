@@ -1,7 +1,5 @@
 # Conflictos entre archivos en común
 
-**Autor:** Sergio Belvís Barba
-
 ---
 
 # 📋 Índice
