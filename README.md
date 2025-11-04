@@ -9,7 +9,7 @@
 ## 📖 Contenido del Proyecto
 
 ### Capítulo 1: Herramientas de Generación de Documentación
-**Autor:** Damiem | [Ver documento completo →](secciones/01-herramientas-documentacion.md)
+**Autor:** Damiem | [Ver documento completo →](docs/secciones/01-herramientas-documentacion.md)
 
 - 6.2. Herramientas externas para la generación de documentación
   - Javadoc
@@ -20,7 +20,7 @@
 ---
 
 ### Capítulo 2: Plantillas y Herramientas Colaborativas
-**Autor:** Brian | [Ver documento completo →](secciones/02-plantillas-colaborativas.md)
+**Autor:** Brian | [Ver documento completo →](docs/secciones/02-plantillas-colaborativas.md)
 
 - 6.4. Creación y utilización de plantillas
 - 6.5. Herramientas colaborativas
@@ -30,7 +30,7 @@
 ---
 
 ### Capítulo 3: Instalación y Operaciones con Git
-**Autor:** Sergio | [Ver documento completo →](secciones/03-git-instalacion-operaciones.md)
+**Autor:** Sergio | [Ver documento completo →](docs/secciones/03-git-instalacion-operaciones.md)
 
 - 6.6. Instalación y configuración de sistemas de control de versiones
   - Conceptos básicos
@@ -41,7 +41,7 @@
 ---
 
 ### Capítulo 4: Seguridad e Historia de Repositorios
-**Autor:** Dani | [Ver documento completo →](secciones/04-seguridad-historial.md)
+**Autor:** Dani | [Ver documento completo →](docs/secciones/04-seguridad-historial.md)
 
 - 6.8. Seguridad de los sistemas de control de versiones
   - Protocolo SSH
