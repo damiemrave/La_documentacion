@@ -51,7 +51,7 @@
 ---
 
 ### ( OPCIONAL ) Capítulo 5: Conflicto de diferentes pull-requests en un mismo archivo
-**Autor:** Todos los miembros | [Ver documento completo →](docs/secciones/05-conflicto_entre_pull_requests.md)
+**Autor:** Todos los miembros | [Ver documento completo →](docs/secciones/05-conflicto-entre-pull-requests.md)
 
 - ¿Cuándo ocurre este tipo de conflicto?
 - ¿Cómo identificarlo y cómo arreglarlo?
