@@ -50,15 +50,23 @@
 
 ---
 
+### ( OPCIONAL ) Capítulo 5: Conflicto de diferentes pull-requests en un mismo archivo
+**Autor:** Todos los miembros | [Ver documento completo →](docs/secciones/05-conflicto_entre_pull_requests.md)
+
+- ¿Cuándo ocurre este tipo de conflicto?
+- ¿Cómo identificarlo y cómo arreglarlo?
+
+---
+
 ## 👥 Equipo de Desarrollo
 
 | Miembro | Rol | Secciones |
 |---------|-----|-----------|
-| Damiem | Coordinador + Desarrollador | 6.2, 6.3 |
-| Brian | Desarrollador | 6.4, 6.5 |
-| Sergio | Experto Git + Desarrollador | 6.6, 6.7 |
-| Dani | Desarrollador + QA | 6.8, 6.9 |
-| William | Editor + Diseñador | Integración final |
+| Damiem | Coordinador + Desarrollador | 6.2, 6.3 | + Capítulo 5
+| Brian | Desarrollador | 6.4, 6.5 | + Capítulo 5
+| Sergio | Experto Git + Desarrollador | 6.6, 6.7 | + Capítulo 5
+| Dani | Desarrollador + QA | 6.8, 6.9 | + Capítulo 5
+| William | Editor + Diseñador | Integración final | + Capítulo 5
 
 ---
 
