@@ -62,11 +62,11 @@
 
 | Miembro | Rol | Secciones |
 |---------|-----|-----------|
-| Damiem | Coordinador + Desarrollador | 6.2, 6.3 | + Capítulo 5
+| Damiem | Coordinador + Desarrollador | 6.2, 6.3 |+ Capítulo 5
 | Brian | Desarrollador | 6.4, 6.5 | + Capítulo 5
-| Sergio | Experto Git + Desarrollador | 6.6, 6.7 | + Capítulo 5
+| Sergio | Experto Git + Desarrollador | 6.6, 6.7 |+ Capítulo 5
 | Dani | Desarrollador + QA | 6.8, 6.9 | + Capítulo 5
-| William | Editor + Diseñador | Integración final | + Capítulo 5
+| William | Editor + Diseñador | Integración final |+ Capítulo 5
 
 ---
 
